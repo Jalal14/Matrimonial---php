@@ -12,6 +12,8 @@
 			$religionList = getAllReligion();
 			if ($_SERVER['REQUEST_METHOD']=='POST') {
 				$suggestUserList = searchedUsers($_POST);
+                var_dump($suggestUserList);
+                die();
 			}
 			break;
 		default:
