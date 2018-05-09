@@ -29,6 +29,7 @@
 			if (count($_GET)>0) {
 				$key = array_keys($_GET)[1];
 				$searchedUser=getUserDetailsById($key);
+				$perAddress =
 				$messages = getAllMessageById($_SESSION['loggedUser']['uid'], $key);
 				$isFavorite = isFavoriteUser($_SESSION['loggedUser']['uid'],$key);
 				$isReqSent = isFriendReqSent($_SESSION['loggedUser']['uid'],$key);

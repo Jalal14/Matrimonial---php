@@ -3,7 +3,7 @@
 ?>
 <script type="text/javascript" src=<?php echo APP_ROOT."/asset/js/jquery-3.2.1.js"; ?>></script>
 <script type="text/javascript" src=<?php echo APP_ROOT."/asset/js/chat.js"; ?>></script>
-<link rel="stylesheet" type="text/css" href=<?php echo APP_ROOT."/asset/css/bootstrap.min.css"; ?>>
+<link rel="stylesheet" type="text/css" href=<?= APP_ROOT."/asset/css/stylesheet.css"; ?>>
 <table width="65%" align="center" cellspacing="0" cellpadding="5" border="1">
     <tr>
         <?php require_once SERVER_ROOT."\\app\\view\\top-panel.php"; ?>
@@ -209,39 +209,43 @@
 				echo $errorMsg;
 			?>
 		</td>
-		<div id="conversation">
-		<?php
-		if (isset($isFriend) && $isFriend) { ?>
-			<td valign="top">
-				<div id="message-body">
-					<?php
-					if (isset($messages)) {
-						foreach ($messages as $message) {
-							if ($message['message']!=null) {
-								if ($message['sender']==$_SESSION['loggedUser']['uid']) {
-									echo "<span style='float:right'><b><img style='height :20px; width :20px; border-radius: 20px;' src=".APP_ROOT."/asset/".$_SESSION['loggedUser']['propic']."></b></span>";
-									echo "<span style='float:right'>".$message['message']."&nbsp;</span><br><br>";
-								}else{
-									echo "<span style='float:left'><b><img style='height :20px; width :20px; border-radius: 20px;' src=".APP_ROOT."/asset/".$searchedUser['propic']."></b></span>";
-									echo "<span style='float:left'>&nbsp;".$message['message']."</span><br><br>";
-								}
-							}
-						}
-					}
-					?>
-				</div>
-				<hr>
-				<form method="POST">
-					<input style="width: 100%" type="text" name="message" id="message"><br>
-					<input style="float: right;" type="submit" name="send" value="Send">
-				</form>
-			</td>
-		<?php } ?>
-		</div>
+        <td valign="top">
+            <div id="conversation">
+                <?php
+                $userImage = APP_ROOT."/asset/".$_SESSION['loggedUser']['propic'];
+                if (isset($isFriend) && $isFriend) { ?>
+                        <div id="message-body">
+                            <?php
+                            if (isset($messages)) {
+                                foreach ($messages as $message) {
+                                    if ($message['message']!=null) {
+                                        if ($message['sender']==$_SESSION['loggedUser']['uid']) {
+                                            echo "<span style='float:right'><b><img style='height :20px; width :20px; border-radius: 20px;' src='$userImage'></b></span>";
+                                            echo "<span style='float:right'>".$message['message']."&nbsp;</span><br><br>";
+                                        }else{
+                                            echo "<span style='float:left'><b><img style='height :20px; width :20px; border-radius: 20px;' src=".APP_ROOT."/asset/".$searchedUser['propic']."></b></span>";
+                                            echo "<span style='float:left'>&nbsp;".$message['message']."</span><br><br>";
+                                        }
+                                    }
+                                }
+                            }
+                            ?>
+                        </div>
+                        <hr>
+                <?php } ?>
+            </div>
+        </td>
     </tr>
     <tr>
+        <td></td>
         <td align="center">
             Copyright &copy; 2017
+        </td>
+        <td>
+            <form method="POST" id="text-area">
+                <input style="width: 100%" type="text" name="message" id="message"><br>
+                <input style="float: right;" type="submit" name="send" value="Send" id="send-button">
+            </form>
         </td>
     </tr>
 </table>
