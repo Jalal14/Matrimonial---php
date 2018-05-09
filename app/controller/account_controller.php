@@ -68,15 +68,20 @@
 					$loggedUser = $_SESSION['loggedUser'];
 					$fileName = explode('.', $_FILES['propic']['name']);
 					$tempName = $_FILES['propic']['tmp_name'];
-					$propic = $loggedUser['uname'].".".$fileName[1];
-					if(!empty($fileName)) {
-						if (move_uploaded_file($tempName, $location.$propic)) {
-							$errorMsg = updatePropic($loggedUser, $propic);
-							header("location: ".APP_ROOT."/?account_profile-picture");
-						}else {
-							$errorMsg='An error occured,please try again';
-						}
-					}
+					if ($fileName[1] == 'JPG' || $fileName[1] == 'jpg' || $fileName[1] == 'PNG' || $fileName[1] == 'png') {
+                        $propic = $loggedUser['uname'] . "." . $fileName[1];
+                        if (!empty($fileName)) {
+                            if (move_uploaded_file($tempName, $location . $propic)) {
+                                $errorMsg = updatePropic($loggedUser, $propic);
+                                header("location: " . APP_ROOT . "/?account_profile-picture");
+                            } else {
+                                $errorMsg = 'An error occured,please try again';
+                            }
+                        }
+                    }
+                    else{
+                        $errorMsg = 'Choose .jpg or .png as profile picture.';
+                    }
 				}
 			}else {
 				header("location: ".APP_ROOT);

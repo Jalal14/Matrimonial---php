@@ -5,13 +5,13 @@
 				<tr>
 					<td>
 						<a href=<?php echo APP_ROOT; ?>>
-							<img height="48" src=<?php echo APP_ROOT."/asset/defaultpic/ring.png"; ?>>
+							<img height="48" src=<?= APP_ROOT."/asset/defaultpic/ring.png"; ?>>
 						</a>
 					</td>
 					<td align="right">
-						<a href=<?php echo APP_ROOT; ?>>Home</a>&nbsp;|
-						<a href=<?php echo APP_ROOT."/?account_login"; ?>>Login</a>&nbsp;|
-						<a href=<?php echo APP_ROOT."/?account_registration"; ?>>Registration</a>
+						<a href=<?= APP_ROOT; ?>>Home</a>&nbsp;|
+						<a href=<?= APP_ROOT."/?account_login"; ?>>Login</a>&nbsp;|
+						<a href=<?= APP_ROOT."/?account_registration"; ?>>Registration</a>
 					</td>
 				</tr>
 			</table>
@@ -76,11 +76,7 @@
                     
                             <tr>
                                 <td rowspan="7">
-                                    <img width="128" src=
-                                        <?php
-                                            echo APP_ROOT."/asset/".$suggestUser['propic'];
-                                        ?>
-                                    >
+                                    <img width="128" src="<?= APP_ROOT."/asset/".$suggestUser['propic'];?>">
                                 </td>
                                 <td>Name</td>
                                 <td>:</td>

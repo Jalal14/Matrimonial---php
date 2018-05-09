@@ -15,50 +15,38 @@
                         <fieldset>
                             <legend><b>PROFILE</b></legend>
                             <br/>
-                            <input type="hidden" name="friendId" value=
-                                <?php
-                                    echo $friend['uid'];
-                                ?>
-                            >
+                            <input type="hidden" name="friendId" value=<?= $friend['uid'];?>>
                             <table cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td rowspan="7">
-                                        <img width="128" style="padding: 20px;" src=
-                                            <?php
-                                                echo APP_ROOT."/asset/".$friend['propic'];
-                                            ?>
-                                        >
+                                        <img width="128" style="padding: 20px;" src=<?= APP_ROOT."/asset/".$friend['propic'];?>>
                                     </td>
                                     <td>Name</td>
                                     <td>:</td>
-                                    <td> <?php echo $friend['fname']." ".$friend['mname']." ".$friend['lname']; ?> </td>
+                                    <td> <?= $friend['fname']." ".$friend['mname']." ".$friend['lname']; ?> </td>
                                     <tr><td colspan="3"><hr/></td></tr>
                                     <tr>
                                         <td>Age</td>
                                         <td>:</td>
-                                        <td><?php echo $friend['age'];?> </td>
+                                        <td><?= $friend['age'];?> </td>
                                     </tr>
                                     <tr><td colspan="3"><hr/></td></tr>
                                     <tr>
                                         <td>Gender</td>
                                         <td>:</td>
-                                        <td><?php echo $friend['gender_name'];?> </td>
+                                        <td><?= $friend['gender_name'];?> </td>
                                     </tr>
                                     <tr><td colspan="3"><hr/></td></tr>
                                     <tr>
                                         <td>Religion</td>
                                         <td>:</td>
-                                        <td><?php echo $friend['religion_name'];?> </td>
+                                        <td><?= $friend['religion_name'];?> </td>
                                     </tr>
                                 </tr>
                                 <tr><td colspan="3"><br/></td></tr>
                                 <tr>
                                 <td></td>
-                                <td><a href=
-                                    <?php
-                                        echo APP_ROOT."/?user_public-profile&".$friend['uid'];
-                                    ?>
-                                    >View details</a></td>
+                                <td><a href=<?= APP_ROOT."/?user_public-profile&".$friend['uid'];?>>View details</a></td>
                                     <?php
                                         if (isset($unseen)) {
                                             foreach ($unseen as $message) {

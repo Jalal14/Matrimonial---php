@@ -9,9 +9,9 @@
                         </a>
                     </td>
                     <td align="right">
-                        <a href=<?php echo APP_ROOT."/"; ?>>Home</a>&nbsp;|
-                        <a href=<?php echo APP_ROOT."/?account_login"; ?>>Login</a>&nbsp;|
-                        <a href=<?php echo APP_ROOT."/?account_registration";?>>Registration</a>
+                        <a href=<?= APP_ROOT."/"; ?>>Home</a>&nbsp;|
+                        <a href=<?= APP_ROOT."/?account_login"; ?>>Login</a>&nbsp;|
+                        <a href=<?= APP_ROOT."/?account_registration";?>>Registration</a>
                     </td>
                 </tr>
             </table>

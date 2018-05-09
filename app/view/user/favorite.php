@@ -15,18 +15,11 @@
                         <legend><b>PROFILE</b></legend>
                         <br/>
                         <form method="POST">
-                            <input type="hidden" name="friendId" value=
-                            <?php
-                                echo $favorite['uid'];
-                            ?>>
+                            <input type="hidden" name="friendId" value=<?= $favorite['uid']; ?>>
                             <table cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td rowspan="7">
-                                        <img width="128" style="padding: 20px;" src=
-                                            <?php
-                                                echo APP_ROOT."/asset/".$favorite['propic'];
-                                            ?>
-                                        >
+                                        <img width="128" style="padding: 20px;" src=<?= APP_ROOT."/asset/".$favorite['propic']; ?>>
                                     </td>
                                     <td>Name</td>
                                     <td>:</td>
@@ -35,28 +28,24 @@
                                     <tr>
                                         <td>Age</td>
                                         <td>:</td>
-                                        <td><?php echo $favorite['age'];?> </td>
+                                        <td><?= $favorite['age'];?> </td>
                                     </tr>
                                     <tr><td colspan="3"><hr/></td></tr>
                                     <tr>
                                         <td>Gender</td>
                                         <td>:</td>
-                                        <td><?php echo $favorite['gender_name'];?> </td>
+                                        <td><?= $favorite['gender_name'];?> </td>
                                     </tr>
                                     <tr><td colspan="3"><hr/></td></tr>
                                     <tr>
                                         <td>Religion</td>
                                         <td>:</td>
-                                        <td><?php echo $favorite['religion_name'];?> </td>
+                                        <td><?= $favorite['religion_name'];?> </td>
                                     </tr>
                                 </tr>
                                 <tr>
                                 <td></td>
-                                <td><a href=
-                                    <?php
-                                        echo APP_ROOT."/?user_public-profile&".$favorite['uid'];
-                                    ?>
-                                    >View details</a></td>
+                                <td><a href="<?= APP_ROOT."/?user_public-profile&".$favorite['uid']; ?>">View details</a></td>
                                 </tr>
                                 <tr>
                                     <td><input type="submit" name="removeFavorite" value="Remove favorite"></td>

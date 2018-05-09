@@ -5,11 +5,11 @@
                 <tr>
                   <td>
                       <a href=<?php echo APP_ROOT."/?admin_dashboard";?>>
-                          <img height="48" src=<?php echo APP_ROOT."/asset/defaultpic/ring.png";?>>
+                          <img height="48" src=<?= APP_ROOT."/asset/defaultpic/ring.png";?>>
                       </a>
                   </td>
                   <td align="right"><a href=<?php echo APP_ROOT."/?admin_full-profile";?>>Profile</a>&nbsp;|
-                    <a href=<?php echo APP_ROOT."/?account_logout";?>>Logout</a>
+                    <a href=<?= APP_ROOT."/?account_logout";?>>Logout</a>
                   </td>
                 </tr>
             </table>
@@ -19,18 +19,18 @@
         <td width="160" valign="top">
             <b>Account</b><hr/>
             <ul>
-              <li><a href= <?php echo APP_ROOT."/?admin_dashboard"; ?>>Dashboard</a></li>
-              <li><a href= <?php echo APP_ROOT."/?admin_full-profile"; ?>>Profile</a></li>
-              <li><a href= <?php echo APP_ROOT."/?account_update-info"; ?>>Update info</a> </li>
-              <li><a href= <?php echo APP_ROOT."/?account_profile-picture"; ?>>Profile Picture</a></li>
-              <li><a href= <?php echo APP_ROOT."/?account_change-password"; ?>>Change Password</a></li>
-              <li><a href=<?php echo APP_ROOT."/?admin_police-station";?>>Police station</a></li>
-              <li><a href=<?php echo APP_ROOT."/?admin_district";?>>District</a></li>
-              <li><a href=<?php echo APP_ROOT."/?admin_division";?>>Division</a></li>
+              <li><a href= <?= APP_ROOT."/?admin_dashboard"; ?>>Dashboard</a></li>
+              <li><a href= <?= APP_ROOT."/?admin_full-profile"; ?>>Profile</a></li>
+              <li><a href= <?= APP_ROOT."/?account_update-info"; ?>>Update info</a> </li>
+              <li><a href= <?= APP_ROOT."/?account_profile-picture"; ?>>Profile Picture</a></li>
+              <li><a href= <?= APP_ROOT."/?account_change-password"; ?>>Change Password</a></li>
+              <li><a href=<?= APP_ROOT."/?admin_police-station";?>>Police station</a></li>
+              <li><a href=<?= APP_ROOT."/?admin_district";?>>District</a></li>
+              <li><a href=<?= APP_ROOT."/?admin_division";?>>Division</a></li>
             </ul>
         </td>
         <td valign="top">
-			<h1>Requested page not found, goto <a href=<?php echo APP_ROOT; ?>>main page</a></h1>
+			<h1>Requested page not found, goto <a href=<?= APP_ROOT; ?>>main page</a></h1>
 		</td>
     </tr>
     <tr>

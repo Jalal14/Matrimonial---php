@@ -12,15 +12,7 @@
 				<table cellpadding="0" cellspacing="0">
 					<tr>
 						<td rowspan="7">
-							<img width="128" src= 
-								<?php 
-									if (isset($loggedUser['propic'])) {
-										echo APP_ROOT."/asset/".$loggedUser['propic'];
-									}else{
-										echo APP_ROOT."/asset/".$loggedUser['propic']; 
-									}
-								?>
-							/>
+							<img width="128" src="<?= APP_ROOT."/asset/".$loggedUser['propic']; ?>"/>
 						</td>
 						<td>First name: </td>
 	          			<td><input type="text" name="fname" value=

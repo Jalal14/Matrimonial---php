@@ -2,8 +2,8 @@
 	$loggedUser = $_SESSION['loggedUser'];
 ?>
 <script type="text/javascript" src=<?php echo APP_ROOT."/asset/js/jquery-3.2.1.js"; ?>></script>
-<!--script type="text/javascript" src=<?php echo APP_ROOT."/asset/js/chat.js"; ?>></script-->
-<!--link rel="stylesheet" type="text/css" href=<?php echo APP_ROOT."/asset/css/bootstrap.min.css"; ?>-->
+<script type="text/javascript" src=<?php echo APP_ROOT."/asset/js/chat.js"; ?>></script>
+<link rel="stylesheet" type="text/css" href=<?php echo APP_ROOT."/asset/css/bootstrap.min.css"; ?>>
 <table width="65%" align="center" cellspacing="0" cellpadding="5" border="1">
     <tr>
         <?php require_once SERVER_ROOT."\\app\\view\\top-panel.php"; ?>
@@ -19,13 +19,7 @@
 							<input type="hidden" name="friendId" id="friendId" value=<?php echo $searchedUser['uid']; ?>>
 							<input type="hidden" name="userId" id="userId" value=<?php echo $loggedUser['uid']; ?>>
 							<td rowspan="7">
-								<img width="128" style="padding: 20px;" src=
-									<?php
-										if (isset($searchedUser['propic'])) {
-											echo APP_ROOT."/asset/".$searchedUser['propic'];
-										}
-									?>
-								/>
+								<img width="128" style="padding: 20px;" src="<?= APP_ROOT."/asset/".$searchedUser['propic']; ?>"/>
 							</td>
 							<td>Name</td>
 							<td>:</td>

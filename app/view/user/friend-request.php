@@ -15,50 +15,38 @@
                         <fieldset>
                             <legend><b>PROFILE</b></legend>
                             <br/>
-                            <input type="hidden" name="friendId" value=
-                                <?php
-                                    echo $friendReq['uid'];
-                                ?>
-                            >
+                            <input type="hidden" name="friendId" value=<?= $friendReq['uid'];?>>
                             <table cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td rowspan="7">
-                                        <img width="128" style="padding: 20px;" src=
-                                            <?php
-                                                echo APP_ROOT."/asset/".$friendReq['propic'];
-                                            ?>
-                                        >
+                                        <img width="128" style="padding: 20px;" src="<?= APP_ROOT."/asset/".$friendReq['propic'];?>">
                                     </td>
                                     <td>Name</td>
                                     <td>:</td>
-                                    <td> <?php echo $friendReq['fname']." ".$friendReq['mname']." ".$friendReq['lname']; ?> </td>
+                                    <td> <?= $friendReq['fname']." ".$friendReq['mname']." ".$friendReq['lname']; ?> </td>
                                     <tr><td colspan="3"><hr/></td></tr>
                                     <tr>
                                         <td>Age</td>
                                         <td>:</td>
-                                        <td><?php echo $friendReq['age'];?> </td>
+                                        <td><?= $friendReq['age'];?> </td>
                                     </tr>
                                     <tr><td colspan="3"><hr/></td></tr>
                                     <tr>
                                         <td>Gender</td>
                                         <td>:</td>
-                                        <td><?php echo $friendReq['gender_name'];?> </td>
+                                        <td><?= $friendReq['gender_name'];?> </td>
                                     </tr>
                                     <tr><td colspan="3"><hr/></td></tr>
                                     <tr>
                                         <td>Religion</td>
                                         <td>:</td>
-                                        <td><?php echo $friendReq['religion_name'];?> </td>
+                                        <td><?= $friendReq['religion_name'];?> </td>
                                     </tr>
                                 </tr>
                                 <tr><td colspan="3"><br/></td></tr>
                                 <tr>
                                     <td></td>
-                                    <td><a href=
-                                        <?php
-                                            echo APP_ROOT."/?user_public-profile&".$friendReq['uid'];
-                                        ?>
-                                        >View details</a></td>
+                                    <td><a href=<?= APP_ROOT."/?user_public-profile&".$friendReq['uid'];?>>View details</a></td>
                                     <td></td>
                                 </tr>
                                 <tr>

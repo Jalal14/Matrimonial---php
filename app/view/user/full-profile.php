@@ -11,13 +11,7 @@
 			<table cellpadding="0" cellspacing="0">
 				<tr>
 					<td rowspan="7">
-						<img width="128" src= 
-							<?php 
-								if (isset($loggedUser['propic'])) {
-									echo APP_ROOT."/asset/".$loggedUser['propic'];
-								}
-							?>
-						/>
+						<img width="128" src="<?= APP_ROOT."/asset/".$loggedUser['propic']; ?>"/>
 					</td>
 					<td>Name</td>
 					<td>:</td>

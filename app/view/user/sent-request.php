@@ -22,15 +22,11 @@
                             <table cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td rowspan="7">
-                                        <img width="128" style="padding: 20px;" src=
-                                            <?php
-                                                echo APP_ROOT."/asset/".$friendReq['propic'];
-                                            ?>
-                                        >
+                                        <img width="128" style="padding: 20px;" src="<?= APP_ROOT."/asset/".$friendReq['propic']; ?>">
                                     </td>
                                     <td>Name</td>
                                     <td>:</td>
-                                    <td> <?php echo $friendReq['fname']." ".$friendReq['mname']." ".$friendReq['lname']; ?> </td>
+                                    <td> <?= $friendReq['fname']." ".$friendReq['mname']." ".$friendReq['lname']; ?> </td>
                                     <tr><td colspan="3"><hr/></td></tr>
                                     <tr>
                                         <td>Age</td>
@@ -52,11 +48,7 @@
                                 </tr>
                                 <tr>
                                 <td></td>
-                                <td><a href=
-                                    <?php
-                                        echo APP_ROOT."/?user_public-profile&".$friendReq['uid'];
-                                    ?>
-                                    >View details</a></td>
+                                <td><a href=<?= APP_ROOT."/?user_public-profile&".$friendReq['uid'];?>>View details</a></td>
                                 </tr>
                                 <tr>
                                     <td><input type="submit" name="cancelRequest" value="Cancel request"></td>

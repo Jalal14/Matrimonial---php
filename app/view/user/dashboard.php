@@ -72,42 +72,34 @@
                                 <tr>
                                     <td rowspan="7" style="margin: 5px;">
                                         <a href= <?php echo APP_ROOT."/?user_public-profile&".$preSearched['uid']; ?>>
-                                            <img width="128"  style="padding: 20px; border: 1px solid gray; border-radius: 10px; margin-right: 30px;" src=
-                                            <?php
-                                                echo APP_ROOT."/asset/".$preSearched['propic'];
-                                            ?>
-                                        >
+                                            <img width="128"  style="padding: 20px; border: 1px solid gray; border-radius: 10px; margin-right: 30px;" src="<?= APP_ROOT."/asset/".$preSearched['propic']; ?>">
                                     </a>
                                     </td>
                                     <td>Name</td>
                                     <td>:</td>
-                                    <td><b><?php echo $preSearched['fname']." ".$preSearched['mname']." ".$preSearched['lname']; ?></b></td>
+                                    <td><b><?= $preSearched['fname']." ".$preSearched['mname']." ".$preSearched['lname']; ?></b></td>
                                     <tr><td colspan="3"><hr/></td></tr>
                                     <tr>
                                         <td>Age</td>
                                         <td>:</td>
-                                        <td><b><?php echo $preSearched['age'];?></b></td>
+                                        <td><b><?= $preSearched['age'];?></b></td>
                                     </tr>
                                     <tr><td colspan="3"><hr/></td></tr>
                                     <tr>
                                         <td>Gender</td>
                                         <td>:</td>
-                                        <td><b><?php echo $preSearched['gender_name'];?></b></td>
+                                        <td><b><?= $preSearched['gender_name'];?></b></td>
                                     </tr>
                                     <tr><td colspan="3"><hr/></td></tr>
                                     <tr>
                                         <td>Religion</td>
                                         <td>:</td>
-                                        <td><b><?php echo $preSearched['religion_name'];?></b></td>
+                                        <td><b><?= $preSearched['religion_name'];?></b></td>
                                     </tr>
                                 </tr>
                             <tr>
                                 <td></td>
-                                <td><a href=
-                                    <?php
-                                        echo APP_ROOT."/?user_public-profile&".$preSearched['uid'];
-                                    ?>
-                                    >View details</a></td>
+                                <td><a href="<?= APP_ROOT."/?user_public-profile&".$preSearched['uid']; ?>">View details</a></td>
                             </tr>
                         </table>
                     </fieldset>
@@ -121,47 +113,39 @@
                 foreach ($suggestUserList as $suggestUser) {
                     if ($suggestUser['uid'] != $loggedUser['uid']) {?>
                         <fieldset style="background-color: lightgray; border-radius: 5px;">
-                            <legend><h2><?php echo $suggestUser['fname']; ?></h2></legend>
+                            <legend><h2><?= $suggestUser['fname']; ?></h2></legend>
                             <br/>
                             <table cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td rowspan="7">
                                         <a href= <?php echo APP_ROOT."/?user_public-profile&".$suggestUser['uid']; ?>>
-                                        <img width="128" style="padding: 20px; border: 1px solid gray; border-radius: 10px; margin-right: 30px;" src=
-                                            <?php
-                                                echo APP_ROOT."/asset/".$suggestUser['propic'];
-                                            ?>
-                                        ></a>
+                                        <img width="128" style="padding: 20px; border: 1px solid gray; border-radius: 10px; margin-right: 30px;" src="<?= APP_ROOT."/asset/".$suggestUser['propic']; ?>"></a>
                                     </td>
                                     <td>Name</td>
                                     <td>:</td>
-                                    <td><b><?php echo $suggestUser['fname']." ".$suggestUser['mname']." ".$suggestUser['lname']; ?></b></td>
+                                    <td><b><?= $suggestUser['fname']." ".$suggestUser['mname']." ".$suggestUser['lname']; ?></b></td>
                                     <tr><td colspan="3"><hr/></td></tr>
                                     <tr>
                                         <td>Age</td>
                                         <td>:</td>
-                                        <td><b><?php echo $suggestUser['age'];?></b></td>
+                                        <td><b><?= $suggestUser['age'];?></b></td>
                                     </tr>
                                     <tr><td colspan="3"><hr/></td></tr>
                                     <tr>
                                         <td>Gender</td>
                                         <td>:</td>
-                                        <td><b><?php echo $suggestUser['gender_name'];?></b></td>
+                                        <td><b><?= $suggestUser['gender_name'];?></b></td>
                                     </tr>
                                     <tr><td colspan="3"><hr/></td></tr>
                                     <tr>
                                         <td>Religion</td>
                                         <td>:</td>
-                                        <td><b><?php echo $suggestUser['religion_name'];?></b></td>
+                                        <td><b><?= $suggestUser['religion_name'];?></b></td>
                                     </tr>
                                 </tr>
                             <tr>
                                 <td></td>
-                                <td><a href=
-                                    <?php
-                                        echo APP_ROOT."/?user_public-profile&".$suggestUser['uid'];
-                                    ?>
-                                    >View details</a></td>
+                                <td><a href="<?= APP_ROOT."/?user_public-profile&".$suggestUser['uid']; ?>">View details</a></td>
                             </tr>
                         </table>
                     </fieldset>

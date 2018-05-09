@@ -3,12 +3,7 @@
     <tr>
       <td>
           <a href=<?php echo APP_ROOT."/?user_dashboard";?>>
-              <img height="80" style="border-radius: 40px" src=
-              <?php 
-                if (isset($loggedUser['propic'])) {
-                  echo APP_ROOT."/asset/".$loggedUser['propic'];
-                }
-              ?>>
+              <img height="80" style="border-radius: 40px" src="<?= APP_ROOT."/asset/".$loggedUser['propic']; ?>">
           </a>
       </td>
         <td align="right"><a href=<?php echo APP_ROOT."/?user_friend-list";?>><b>

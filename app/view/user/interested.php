@@ -1,8 +1,5 @@
 <?php
     $loggedUser = $_SESSION['loggedUser'];
-    /**echo "<pre>";
-    var_dump($_SESSION);
-    echo "</pre>";**/
 ?>
 <table width="65%" align="center" cellspacing="0" cellpadding="5" border="1">
     <tr>
@@ -23,41 +20,33 @@
                             <table cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td rowspan="7">
-                                        <img width="128" style="padding: 20px;" src=
-                                            <?php
-                                                echo APP_ROOT."/asset/".$favorite['propic'];
-                                            ?>
-                                        >
+                                        <img width="128" style="padding: 20px;" src="<?= APP_ROOT."/asset/".$favorite['propic']; ?>">
                                     </td>
                                     <td>Name</td>
                                     <td>:</td>
-                                    <td> <?php echo $favorite['fname']." ".$favorite['mname']." ".$favorite['lname']; ?> </td>
+                                    <td> <?= $favorite['fname']." ".$favorite['mname']." ".$favorite['lname']; ?> </td>
                                     <tr><td colspan="3"><hr/></td></tr>
                                     <tr>
                                         <td>Age</td>
                                         <td>:</td>
-                                        <td><?php echo $favorite['age'];?> </td>
+                                        <td><?= $favorite['age'];?> </td>
                                     </tr>
                                     <tr><td colspan="3"><hr/></td></tr>
                                     <tr>
                                         <td>Gender</td>
                                         <td>:</td>
-                                        <td><?php echo $favorite['gender_name'];?> </td>
+                                        <td><?= $favorite['gender_name'];?> </td>
                                     </tr>
                                     <tr><td colspan="3"><hr/></td></tr>
                                     <tr>
                                         <td>Religion</td>
                                         <td>:</td>
-                                        <td><?php echo $favorite['religion_name'];?> </td>
+                                        <td><?= $favorite['religion_name'];?> </td>
                                     </tr>
                                 </tr>
                                 <tr>
                                 <td></td>
-                                <td><a href=
-                                    <?php
-                                        echo APP_ROOT."/?user_public-profile&".$favorite['uid'];
-                                    ?>
-                                    >View details</a></td>
+                                <td><a href=<?= APP_ROOT."/?user_public-profile&".$favorite['uid'];?>>View details</a></td>
                                 </tr>
                             </table>
                     </fieldset>
