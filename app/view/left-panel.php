@@ -18,7 +18,7 @@
     </li>
     <li><a href= <?= APP_ROOT."/?user_favorite"; ?>>Favorite list</a></li>
     <li><a href= <?= APP_ROOT."/?user_interested"; ?>>Follower list</a></li>
-    <li><a href= <?= APP_ROOT."/?user_friend-request"; ?>>Sent request list</a></li>
+    <li><a href= <?= APP_ROOT."/?user_sent-request"; ?>>Sent request list</a></li>
     <li><a href= <?= APP_ROOT."/?user_friend-list"; ?>>Friend list</a></li>
   </ul>
 </td>
