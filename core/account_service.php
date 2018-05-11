@@ -76,8 +76,11 @@
 	function permitLogin($user){
 		return permitLoginInDB($user);
 	}
+	function isRegistrationReq($user){
+	    return isRegistrationReqInDb($user);
+    }
 	function updateUserInfo($user){
-		$result = isEmpty($user);
+		$result = isValidUpdateInfo($user);
 		if (isset($result)) {
 			return $result;
 		}
@@ -94,10 +97,9 @@
 		return "Error occured during changing info,try again.";
 	}
 	function updateUserPerAddress($user){
-		$result = isEmpty($user);
-		if (isset($result)) {
-			return $result;
-		}
+		if ($user['per_police_station'] == null){
+		    return "Select police station";
+        }
 		if (hasUserPerAddressInDb($user)==1) {
 			$result = updateUserPerAddressToDb($user);
 			$_SESSION['loggedUser']['per_address'] = getUserPerAddressFromDb($_SESSION['loggedUser']);
@@ -113,10 +115,9 @@
 		return "Error occured during changing permanent address,try again.";
 	}
 	function updateUserPrAddress($user){
-		$result = isEmpty($user);
-		if (isset($result)) {
-			return $result;
-		}
+        if ($user['pr_police_station'] == null){
+            return "Select police station";
+        }
 		if (hasUserPrAddressInDb($user)==1) {
 			$result = updateUserPrAddressToDb($user);
 			$_SESSION['loggedUser']['pr_address'] = getUserPrAddressFromDb($_SESSION['loggedUser']);
@@ -133,10 +134,9 @@
 		return "Error occured during changing permanent address,try again.";
 	}
 	function updateUserEducation($user){
-		$result = isEmpty($user);
-		if (isset($result)) {
-			return $result;
-		}
+	    if ($user['degree'] == null){
+	        return "Select degree";
+        }
 		if (hasUserEducationInDb($user)==1) {
 			$result = updateUserEducationToDb($user);
 			$_SESSION['loggedUser']['education'] = getUserEducationFromDb($user);
@@ -153,14 +153,10 @@
 		return "Error occured during changing permanent address,try again.";
 	}
 	function updateUserJob($user){
-		$result = isEmpty($user);
-		if (isset($result)) {
-			return $result;
-		}
 		if (hasUserJobInDb($user)==1) {
 			$result = updateUserJobToDb($user);
-			$_SESSION['loggedUser']['Job'] = getUserJobByIdFromDb($user);
-			if ($result==1) {
+			$_SESSION['loggedUser']['job'] = getUserJobByIdFromDb($user);
+			if ($result == 1) {
 				$result = updateUserIncomeToDb($user);
 				$_SESSION['loggedUser']['job'] = getUserJobByIdFromDb($user);
 				if ($result==1) {
@@ -178,18 +174,17 @@
 				}
 			}
 		}
-		return "Error occured during changing permanent address,try again.";
+		return "Error occured during changing information,try again.";
 	}
 	function getUserJobById($user){
 		return getUserJobByIdFromDb($user);
 	}
 	function updateUserFamilyInfo($user){
-		$result = isEmpty($user);
-		if (isset($result)) {
-			return $result;
-		}
+		if ($user['family_type'] == ''){
+		    return 'Please select family type';
+        }
 		if (hasUserFamilyInDb($user)==1) {
-			echo $result = updateUserFamilyToDb($user);
+			$result = updateUserFamilyToDb($user);
 			$_SESSION['loggedUser']['family']=getUserFamilyInfoFromDb($user);
 			if ($result==1) {
 				return "Family information successfully updated.";

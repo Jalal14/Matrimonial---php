@@ -23,83 +23,29 @@
         $date2=date_create($date);
         return date_diff($date1,$date2);
     }
-     /**   $isValid = true;
-        if(empty($person['email'])){
-            $isValid = false;
-            $personErr['email'] = "*";
+    function isValidUpdateInfo($user){
+        if ($user['fname'] == ''){
+            return 'First name required';
+        }else if ($user['lname'] == ''){
+            return 'Last name required';
+        }else if ($user['dob'] == '' ){
+            return 'Date of birth required';
+        }else if ($user['gender'] == ''){
+            return 'Select gender';
+        }else if ($user['religion'] == ''){
+            return 'Select religion';
+        }else if ($user['blood'] == ''){
+            return 'Select blood group';
+        }else if ($user['email'] == ''){
+            return 'Email required';
+        }else if ($user['number1'] == ''){
+            return 'Number 1 required';
+        }else if(!filter_var($user['email'], FILTER_VALIDATE_EMAIL)){
+            return 'Invalid email address';
+        }else if ($user['height']!='' && !is_numeric($user['height'])){
+            return 'Enter valid height';
+        }else if ($user['weight']!='' && !is_numeric($user['weight'])){
+            return 'Enter valid weight';
         }
-        else if(isValidEmail($person['email'])==false){
-            $isValid = false;
-            $personErr['email'] = "Invalid email format";
-        }
-        else if(isUniquePersonEmail($person['email'])==false){
-            $isValid = false;
-            $personErr['email'] = "Email is not unique";
-        }
-
-        if(empty($person['uname'])){
-            $isValid = false;
-            $personErr['uname'] = "*";
-        }
-        else if(isValidPersonName($person['uname'])==false){
-            $isValid = false;
-            $personErr['uname'] = "At least two words required, Only letters and white space allowed";
-        }
-
-        
-        if(empty($person['fname'])){
-            $isValid = false;
-            $personErr['fname'] = "*";
-        }
-        else if(isValidPersonName($person['fname'])==false){
-            $isValid = false;
-            $personErr['fname'] = "At least two words required, Only letters and white space allowed";
-        }
-
-        if(empty($person['password'])){
-            $isValid = false;
-            $personErr['password'] = "*";
-        }
-        else if(isValidPassword($person['password'])==false){
-            $isValid = false;
-            $personErr['password'] = "At least two words required, Only letters and white space allowed";
-        }**/
-
-    
-    /*if(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}$/', $password)) {
-    echo 'the password does not meet the requirements!'; }
-    */
-
-
-
-
-
-        /**return $isValid;
     }
-    
-    function validatePersonForUpdate(&$person, &$personErr){
-        $isValid = true;
-        if(empty($person['email'])){
-            $isValid = false;
-            $personErr['email'] = "*";
-        }
-        else if(isValidEmail($person['email'])==false){
-            $isValid = false;
-            $personErr['email'] = "Invalid email format";
-        }
-        else if(isUniquePersonEmailForUpdate($person['id'], $person['email'])==false){
-            $isValid = false;
-            $personErr['email'] = "Email is not unique";
-        }
-
-        if(empty($person['fname'])){
-            $isValid = false;
-            $personErr['fname'] = "*";
-        }
-        else if(isValidPersonName($person['fname'])==false){
-            $isValid = false;
-            $personErr['fname'] = "At least two words required, Only letters and white space allowed";
-        }
-        return $isValid;**/
-    //}
 ?>

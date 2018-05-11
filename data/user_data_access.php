@@ -21,7 +21,7 @@
         return executeNonQuery($query);
 	}
 	function addToFavoriteInDb($uid, $favoriteUser){
-		$query = "INSERT INTO tbl_favorite VALUES(".$uid.",".$favoriteUser.",'".date('Y-m-d', time())."')";
+		$query = "INSERT INTO tbl_favorite VALUES(null, ".$uid.",".$favoriteUser.",'".date('Y-m-d', time())."')";
 		return executeNonQuery($query);
 	}
 	function removeFromFavoriteInDb($uid, $favoriteUser){

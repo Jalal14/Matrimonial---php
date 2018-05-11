@@ -31,6 +31,9 @@
 	}
 	function loadMessages($uid, $send_to){
         $messages = getAllMessageById($uid, $send_to);
+        if ($messages == null){
+            return false;
+        }
         $loggedUser = getUserDetailsById($uid);
         $friend = getUserDetailsById($send_to);
         foreach ($messages as $message) {

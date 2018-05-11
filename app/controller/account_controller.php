@@ -27,9 +27,12 @@
 						}
 						$errorMsg='An error occured,please try again';
 					}else if ($isValid==0) {
-						$errorMsg = "Your account is not approved yet by admin, please wait.";
-					}else {
-						$errorMsg='Wrong username or password';
+					    $registrationReq = isRegistrationReq($user);
+					    if ($registrationReq == 1) {
+                            $errorMsg = "Your account is not approved yet by admin, please wait.";
+                        }else{
+                            $errorMsg='Wrong username or password';
+                        }
 					}
 	            }
 	        }

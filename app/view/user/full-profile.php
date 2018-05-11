@@ -219,7 +219,7 @@
 						<td>:</td>
 						<td>
 							<?php
-								if (isset($loggedUser['annual_income'])) {
+								if (isset($loggedUser['annual_income']) && $loggedUser['annual_income'] != 0) {
 									 echo $loggedUser['annual_income']; 
 								}
 							?>
@@ -231,13 +231,13 @@
 						<td>:</td>
 						<td>
 							<?php
-								if (isset($loggedUser['education']['field'])) {
+								if (isset($loggedUser['education']['field']) && $loggedUser['education']['field'] != '') {
 									echo $loggedUser['education']['field']." from ";
 								}
-								if (isset($loggedUser['education']['institution'])) {
+								if (isset($loggedUser['education']['institution']) && $loggedUser['education']['institution'] != '') {
 									echo $loggedUser['education']['institution']." in ";
 								}
-								if (isset($loggedUser['education']['passing_year'])) {
+								if (isset($loggedUser['education']['passing_year']) && $loggedUser['education']['passing_year'] != '') {
 									echo $loggedUser['education']['passing_year'];
 								}
 							?>	

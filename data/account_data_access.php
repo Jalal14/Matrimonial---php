@@ -19,6 +19,11 @@
         $query = "UPDATE tbl_users SET last_login='".date('Y-m-d h:m:s')."' WHERE uname='".$user['uname']."'";
         return executeNonQuery($query);
     }
+    function isRegistrationReqInDb($user){
+        $query = "SELECT * FROM tbl_registration_req WHERE uname='".$user['uname']."' AND password='".$user['password']."'";
+        $result = executeQuery($query);
+        return mysqli_num_rows($result);
+    }
     function recoverPasswordInDb($user){
         $query = "UPDATE tbl_users SET password='".$user['password']."' WHERE email='".$user['email']."'";
         return executeNonQuery($query);
@@ -29,7 +34,7 @@
         return mysqli_num_rows($result);
   	}
     function updateUserInfoToDb($user){
-        $query = "UPDATE tbl_users SET fname='".$user['fname']."',mname='".$user['mname']."',lname='".$user['lname']."',gender=".$user['gender'].",dob='".$user['dob']."',email='".$user['email']."',number1='".$user['number1']."',number2='".$user['number2']."',height=".$user['height'].", weight=".$user['weight'].",complexion=".$user['complexion'].",religion=".$user['religion'].",marital_status=".$user['marital_status'].",children=".$user['children'].",bio='".$user['bio']."' WHERE uid=".$user['uid'];
+        $query = "UPDATE tbl_users SET fname='".$user['fname']."',mname='".$user['mname']."',lname='".$user['lname']."',gender=".$user['gender'].",dob='".$user['dob']."',email='".$user['email']."',number1='".$user['number1']."',number2='".$user['number2']."',height='".$user['height']."', weight='".$user['weight']."',complexion=".$user['complexion'].",religion=".$user['religion'].",marital_status=".$user['marital_status'].",children='".$user['children']."',bio='".$user['bio']."' WHERE uid=".$user['uid'];
         return executeNonQuery($query);
     }
     function updatePasswordToDb($user,$pass){
@@ -89,7 +94,7 @@
         return executeNonQuery($query);
     }
     function updateUserIncomeToDb($user){
-        $query = "UPDATE tbl_users SET annual_income=".$user['annual_income']." WHERE uid=".$user['uid'];
+        $query = "UPDATE tbl_users SET annual_income='".$user['annual_income']."' WHERE uid=".$user['uid'];
         return executeNonQuery($query);
     }
     function hasUserFamilyInDb($user){
@@ -102,7 +107,7 @@
         return executeNonQuery($query);
     }
     function updateUserFamilyToDb($user){
-        $query = "UPDATE tbl_family SET type=".$user['family_type'].",father_name='".$user['father_name']."',father_occupation='".$user['father_occupation']."',father_income=".$user['father_income'].",mother_name='".$user['mother_name']."',mother_occupation='".$user['mother_occupation']."',mother_income=".$user['mother_income'].",contact='".$user['contact']."',siblings=".$user['siblings']." WHERE uid=".$user['uid'];
+        $query = "UPDATE tbl_family SET type=".$user['family_type'].",father_name='".$user['father_name']."',father_occupation='".$user['father_occupation']."',father_income='".$user['father_income']."',mother_name='".$user['mother_name']."',mother_occupation='".$user['mother_occupation']."',mother_income='".$user['mother_income']."',contact='".$user['contact']."',siblings='".$user['siblings']."' WHERE uid=".$user['uid'];
         return executeNonQuery($query);
     }
     function updatePropicToDb($user, $propic){

@@ -124,7 +124,7 @@
 						<tr>
 							<td>Height</td>
 							<td>:</td>
-							<td><input type="number" name="height" value=
+							<td><input type="text" name="height" value=
 								<?php
 									if (isset($loggedUser['height'])) {
 										echo $loggedUser['height']; 
@@ -136,7 +136,7 @@
 						<tr>
 							<td>Weight</td>
 							<td>:</td>
-							<td><input type="number" name="weight" value=
+							<td><input type="text" name="weight" value=
 								<?php
 									if (isset($loggedUser['weight'])) {
 										echo $loggedUser['weight'];

@@ -36,7 +36,6 @@
 				$wantFriend = isFriendReqSent($key, $_SESSION['loggedUser']['uid']);
 				$isFriend = isFriend($_SESSION['loggedUser']['uid'],$key);
 				if ($_SERVER['REQUEST_METHOD']=="POST") {
-					var_dump($_POST);
 					if (isset($_POST['send'])) {
 						$message['sender'] = $_SESSION['loggedUser']['uid'];
 						$message['send_to'] = $key;
@@ -61,7 +60,7 @@
 					}else if (isset($_POST['unFriend'])) {
 						$errorMsg = unFriend($_SESSION['loggedUser']['uid'],$key);
 					}
-					//header("location: ".APP_ROOT."/?user_public-profile&".$key);
+					header("location: ".APP_ROOT."/?user_public-profile&".$key);
 				}
 			}
 			break;
